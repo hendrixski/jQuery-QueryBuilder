@@ -43,6 +43,10 @@
         this.init(options);
     };
 
+     //Added this to make it work in AMD                                                       
+    if(!!define && typeof define == "function" && !!define.amd){                              
+      var MicroEvent = require("microevent");                                                 
+    }   
     MicroEvent.mixin(QueryBuilder);
 
 

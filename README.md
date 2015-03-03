@@ -48,6 +48,20 @@ Run `grunt test` to run jsHint and the Mocha test suite.
 
 Run `grunt list_modules` to get the list of available plugins and languages.
 
+### AMD importing
+To import this into require.js you need to set the microevent and extendext folders and set them as dependencies in your AMD file. Like this:
+
+    paths: { 
+      "microevent":           "../bower_components/microevent-mistic100/microevent",
+      "extendext":            "../bower_components/extendext/jQuery.extendext", 
+     },                                                                                                                   
+      shim: {                                                                                                              
+          jquery: {                                                                                                        
+              exports: "jQuery"                                                                                            
+          },                                                                                                               
+          jquerybuilder: ["jquery", "microevent", "extendext"]
+    }
+ 
 ### Contributing
 Changes have to be done only in `src` directory. The `dist` directory is updated only once in a while before a release.
 
