@@ -1126,7 +1126,7 @@
 
             $target.addClass('has-error');
             var $error = $target.find('.error-container').eq(0);
-            $error.attr('title', fmt.apply(null, errorLoc));
+            $error.attr('title', fmt.call(null, "Error at {0}",  errorLoc));
         }
 
         this.trigger('validationError', $target, error);
